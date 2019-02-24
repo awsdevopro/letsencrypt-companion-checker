@@ -66,7 +66,7 @@ $ docker run --detach \
 
 The host docker socket has to be bound inside this container too, this time to `/var/run/docker.sock`.
 
-### Step 3 - proxyed container(s) - Please go to the Step 4 part before running proxied container
+### Step 3 - proxyed container(s) - Must jump to the Step 4 before running proxied container.
 
 Once both **nginx-proxy** and **letsencrypt-nginx-proxy-companion** containers are up and running, start any container you want proxyed with environment variables `VIRTUAL_HOST` and `LETSENCRYPT_HOST` both set to the domain(s) your proxyed container is going to use.
 
@@ -104,7 +104,7 @@ $ docker run --detach \
 Repeat [Step 3](#step-3---proxyed-containers) for any other container you want to proxy.
 
 
-### Step 4 Troubleshooting - Once Step 1 and Step 2 is done.
+### Step 4 Troubleshooting - Once Step 1 and Step 2 are done.
 
 **Must Check: Go to https://port-checker.info/ and check if 80 and 443 is open or not.**
 
