@@ -138,10 +138,10 @@ dhparam generation complete, reloading nginx
 dockergen.1 | 2019/02/23 16:46:11 Received event start for container 91f07238711f
 dockergen.1 | 2019/02/23 16:46:11 Generated '/etc/nginx/conf.d/default.conf' from 3 containers
 dockergen.1 | 2019/02/23 16:46:11 Running 'nginx -s reload'
-nginx.1    | domain.com 66.133.109.36 - - [23/Feb/2019:16:46:32 +0000] "GET /.well-known/acme-challenge/H12ImVg58WCifFb6cq0rqJHSuYk7RH6lhk7O0-3fX14 HTTP/1.1" 200 87 "-" "Mozilla/5.0 (compatible; Let's Encrypt validation server; +https://www.letsencrypt.org)"
-nginx.1    | sub-domain.com 66.133.109.36 - - [23/Feb/2019:16:46:32 +0000] "GET /.well-known/acme-challenge/H12ImVg58WCifFb6cq0rqJHSuYk7RH6lhk7O0-3fX14 HTTP/1.1" 200 87 "-" "Mozilla/5.0 (compatible; Let's Encrypt validation server; +https://www.letsencrypt.org)"
-nginx.1    | other-domain.com 66.133.109.36 - - [23/Feb/2019:16:46:32 +0000] "GET /.well-known/acme-challenge/H12ImVg58WCifFb6cq0rqJHSuYk7RH6lhk7O0-3fX14 HTTP/1.1" 200 87 "-" "Mozilla/5.0 (compatible; Let's Encrypt validation server; +https://www.letsencrypt.org)"
-You're done! 
+nginx.1    | subdomain.yourdomain.tld 66.133.109.36 - - [23/Feb/2019:16:46:32 +0000] "GET /.well-known/acme-challenge/H12ImVg58WCifFb6cq0rqJHSuYk7RH6lhk7O0-3fX14 HTTP/1.1" 200 87 "-" "Mozilla/5.0 (compatible; Let's Encrypt validation server; +https://www.letsencrypt.org)"
 
-Please browse your website at https://domain.com or https://sub-domain.com or https://other-domain.com
+
+You're done!
+
+Please browse your website at https://subdomain.yourdomain.tld
 ```
