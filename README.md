@@ -136,28 +136,17 @@ Check nginx-proxy logs
 
 $ docker logs -f nginx-proxy
 
-WARNING: /etc/nginx/dhparam/dhparam.pem was not found. A pre-generated dhparam.pem will be used for now while a new one
-is being generated in the background.  Once the new dhparam.pem is in place, nginx will be reloaded.
-forego     | starting dockergen.1 on port 5000
-forego     | starting nginx.1 on port 5100
-dockergen.1 | 2019/02/23 16:44:22 Generated '/etc/nginx/conf.d/default.conf' from 1 containers
-dockergen.1 | 2019/02/23 16:44:22 Running 'nginx -s reload'
-dockergen.1 | 2019/02/23 16:44:22 Watching docker events
-dockergen.1 | 2019/02/23 16:44:22 Contents of /etc/nginx/conf.d/default.conf did not change. Skipping notification 'nginx -s reload'
-dockergen.1 | 2019/02/23 16:44:34 Received event start for container 97cdde6d2714
-dockergen.1 | 2019/02/23 16:44:34 Contents of /etc/nginx/conf.d/default.conf did not change. Skipping notification 'nginx -s reload'
-2019/02/23 16:44:34 [notice] 51#51: signal process started
-Generating DH parameters, 2048 bit long safe prime, generator 2
-This is going to take a long time
-dhparam generation complete, reloading nginx
-dockergen.1 | 2019/02/23 16:46:11 Received event start for container 91f07238711f
-dockergen.1 | 2019/02/23 16:46:11 Generated '/etc/nginx/conf.d/default.conf' from 3 containers
-dockergen.1 | 2019/02/23 16:46:11 Running 'nginx -s reload'
 nginx.1    | subdomain.yourdomain.tld 66.133.109.36 - - [23/Feb/2019:16:46:32 +0000] "GET /.well-known/acme-challenge/H12ImVg58WCifFb6cq0rqJHSuYk7RH6lhk7O0-3fX14 HTTP/1.1" 200 87 "-" "Mozilla/5.0 (compatible; Let's Encrypt validation server; +https://www.letsencrypt.org)"
 ```
-* If you see red letters with closed ports you're stuck here. Please login to your wifi connected home router and forward 443<-->443 and 80<-->80 to the ubuntu:16.04 host. For me it's TP-Link router, I login to the router and forward it to host ubuntu:16.04 private IP <192.168.1.103>. If any issues, please write a question to <VIDEO COMMENT SECTION> and give Title as "80,443 LETSENCRYPT ISSUE", otherwise, I'm counting as spam. Please provide more details in the email body, like OS, Router, Router Model, if possible with screenshots. By default "web management port" is set to 80, you need to change it other than 80. This way you can forward 80 to 80 only. Then, you go get running proxied container in the step 3. The `$ docker logs -f nginx-proxy` will be similar to the just given logs.
+* If you see red letters with closed ports you're stuck here. Please login to your wifi connected home router and forward 443<-->443 and 80<-->80 to the ubuntu:16.04 host. For me it's TP-Link router, I login to the router and forward it to host ubuntu:16.04 private IP <192.168.1.103>. If any issues, please write a question to <VIDEO COMMENT SECTION> and give Title as "80,443 LETSENCRYPT ISSUE", otherwise, I'm counting as spam. Please provide more details in the email body, like OS, Router, Router Model, if possible with screenshots. By default "web management port" is set to 80, you need to change it other than 80. This way you can forward 80 to 80 only. Then, you go get running proxied container in the step 3. 
 
-You're done!
+```
+Check nginx-proxy logs 
+
+$ docker logs -f nginx-proxy
+
+nginx.1    | subdomain.yourdomain.tld 66.133.109.36 - - [23/Feb/2019:16:46:32 +0000] "GET /.well-known/acme-challenge/H12ImVg58WCifFb6cq0rqJHSuYk7RH6lhk7O0-3fX14 HTTP/1.1" 200 87 "-" "Mozilla/5.0 (compatible; Let's Encrypt validation server; +https://www.letsencrypt.org)"
+```
 
 Please browse your website at https://subdomain.yourdomain.tld
 
