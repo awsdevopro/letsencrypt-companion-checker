@@ -89,13 +89,13 @@ The containers being proxied must expose the port to be proxied, either by using
 
 If the proxyed container listen on and expose another port than the default `80`, you can force **nginx-proxy** to use this port with the [`VIRTUAL_PORT`](https://github.com/jwilder/nginx-proxy#multiple-ports) environment variable.
 
-Example using [Grafana](https://hub.docker.com/r/grafana/grafana/) (expose and listen on port 3000):
+Example using [apache-php56](https://hub.docker.com/r/awsdevopro/apache-php56) (expose and listen on port 8282):
 
 ```shell
 $ docker run --detach \
-    --name grafana \
+    --name your-proxyed-app \
     --env "VIRTUAL_HOST=othersubdomain.yourdomain.tld" \
-    --env "VIRTUAL_PORT=3000" \
+    --env "VIRTUAL_PORT=8282" \
     --env "LETSENCRYPT_HOST=othersubdomain.yourdomain.tld" \
     --env "LETSENCRYPT_EMAIL=mail@yourdomain.tld" \
     awsdevopro/apache-php56
