@@ -113,7 +113,7 @@ Repeat [Step 3](#step-3---proxyed-containers) for any other container you want t
 Port 80 is OPEN on host Public-IP-XX
 Port 443 is OPEN on host Public-IP-XX 
 ```
-* If you see green letters with open ports, you go to the Step 3 to run the proxied container. 
+* If you see green letters with open ports, you go get running proxied container in the step 3. 
 
 * If you see red letters with closed ports you're stuck here. Please login to your wifi connected home router and forward 443<-->443 and 80<-->80 to the ubuntu:16.04 host. For me it's TP-Link router, I login to the router and forward it to host ubuntu:16.04 private IP <192.168.1.103>. If any issues, please write a question to <aalmamun.ece08@gmail.com> and give Title as "80,443 LETSENCRYPT ISSUE", otherwise, I'm counting as spam. Please provide more details in the email body, like OS, Router, Router Model, if possible with screenshots. By default "web management port" is set to 80, you need to change it other than 80. This way you can forward 80 to 80 only.
 
