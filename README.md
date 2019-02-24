@@ -80,7 +80,7 @@ $ docker run --detach \
     --env "VIRTUAL_HOST=subdomain.yourdomain.tld" \
     --env "LETSENCRYPT_HOST=subdomain.yourdomain.tld" \
     --env "LETSENCRYPT_EMAIL=mail@yourdomain.tld" \
-    nginx
+    awsdevopro/apache-php56
 ```
 
 Albeit **optional**, it is **recommended** to provide a valid email address through the `LETSENCRYPT_EMAIL` environment variable, so that Let's Encrypt can warn you about expiring certificates and allow you to recover your account.
@@ -98,7 +98,7 @@ $ docker run --detach \
     --env "VIRTUAL_PORT=3000" \
     --env "LETSENCRYPT_HOST=othersubdomain.yourdomain.tld" \
     --env "LETSENCRYPT_EMAIL=mail@yourdomain.tld" \
-    grafana/grafana
+    awsdevopro/apache-php56
 ```
 
 Repeat [Step 3](#step-3---proxyed-containers) for any other container you want to proxy.
